@@ -4,7 +4,7 @@ import BackgroundMobile from "../../assets/bg-mobile-dark.jpg";
 
 export const HeaderContainer = styled.header`
   background-image: url(${Background});
-  background-repeat: no-repeat, repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
   height: 38vh;

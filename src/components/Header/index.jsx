@@ -1,6 +1,6 @@
 import React from "react";
-import { HeaderContainer, HeaderContent, Title, ButtonTheme } from './style';
-import IconeSun from '../../assets/icon-sun.svg'
+import { HeaderContainer, HeaderContent, Title, ButtonTheme } from "./style";
+import IconSun from "../../assets/icon-sun.svg";
 import Input from "../Input";
 
 const Header = () => {
@@ -8,7 +8,7 @@ const Header = () => {
     <HeaderContainer>
       <HeaderContent>
         <Title>T O D O</Title>
-        <ButtonTheme src={IconeSun} alt="Light Mode"/>
+        <ButtonTheme src={IconSun} alt="Light Mode"/>
       </HeaderContent>
       <Input/>
     </HeaderContainer>

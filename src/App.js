@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './components/Header';
-import List from './components/List';
-import { GlobalStyle } from './styles/GlobalStyle';
+import Header from "./components/Header";
+import List from "./components/List";
+import { GlobalStyle } from "./styles/GlobalStyle";
 
 function App() {
   return (

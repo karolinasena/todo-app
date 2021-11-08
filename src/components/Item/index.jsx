@@ -1,11 +1,17 @@
 import React from "react";
-import { InputCheckbox, ItemContainer, Label } from "./style";
+import { ButtonRemove, InputCheckbox, ItemContainer, Label } from "./style";
+import IconRemove from "../../assets/icon-cross.svg"; 
 
 const Item = () => {
   return (
     <ItemContainer>
-      <InputCheckbox type="checkbox" id="input-checkbox"/>
-      <Label htmlFor="input-checkbox"></Label>
+      <Label>
+        Complete Todo App on Frontend Mentor
+        <InputCheckbox type="checkbox" id="input-checkbox"/>
+        <span className="check"></span>
+      </Label>
+      
+      <ButtonRemove src={IconRemove} alt="Remover TODO"/>
     </ItemContainer>
   );
 }

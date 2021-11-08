@@ -8,10 +8,6 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Josefin Sans", sans-serif;
   }
 
-  body {
-    background:  hsl(235, 19%, 35%);
-  }
-
   a {
     text-decoration: none;
   }
