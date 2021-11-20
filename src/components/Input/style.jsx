@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
-export const InputContainer = styled.input`
-  background: hsl(237, 14%, 26%);
-  color: hsl(234, 39%, 85%);
-  margin-top: 1.5rem;
-  padding: 1.5rem;
+export const InputContainer = styled.div`
   width: 40%;
-  border-radius: .5rem;
-  font-size: 18px;
+
+  input {
+    background: ${props => props.theme.colors.backgroundContainer};
+    color: ${props => props.theme.colors.text};
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    
+    border-radius: .5rem;
+    font-size: 18px;
+  }
 
   @media (max-width: 800px) {
     width: 80%;

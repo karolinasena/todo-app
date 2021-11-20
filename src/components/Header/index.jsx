@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "styled-components";
 import { HeaderContainer, HeaderContent, Title, ButtonTheme } from "./style";
-import IconSun from "../../assets/icon-sun.svg";
 import Input from "../Input";
+import IconSun from "../../assets/icon-sun.svg";
+import IconMoon from "../../assets/icon-moon.svg";
 
-const Header = () => {
+const Header = ({ themeMode, toggleTheme }) => {
+  const { title } = useContext(ThemeContext);
+
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Title>T O D O</Title>
-        <ButtonTheme src={IconSun} alt="Light Mode"/>
+        <Title>Todo</Title>
+        <ButtonTheme onClick={toggleTheme}>
+          {themeMode.title === "light" ? (
+            <img src={IconMoon} alt="Light Mode" cursor="pointer"/>
+        ) : (
+          <img src={IconSun} alt="Dark Mode"/>
+        )}
+        </ButtonTheme>
       </HeaderContent>
-      <Input/>
+      <Input />
     </HeaderContainer>
   );
 }

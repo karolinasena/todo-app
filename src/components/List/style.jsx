@@ -5,16 +5,16 @@ export const Container = styled.section`
   justify-content: center;
   width: 100vw;
   height: 68vh;
-  background: hsl(235, 19%, 35%);
+  background: ${props => props.theme.colors.background};
 `;
 
 export const ListContainer = styled.ul`
-  background: hsl(237, 14%, 26%);
+  background: ${props => props.theme.colors.backgroundContainer};
   width: 40%;
   max-height: 27.5rem;
   overflow-y: auto;
   border-radius: .5rem;
-  margin-top: -3rem;
+  margin-top: -4.5rem;
   margin-bottom: 1.5rem;
 
   ::-webkit-scrollbar {

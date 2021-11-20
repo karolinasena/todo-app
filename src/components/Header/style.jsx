@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import Background from "../../assets/bg-desktop-dark.jpg";
-import BackgroundMobile from "../../assets/bg-mobile-dark.jpg";
 
 export const HeaderContainer = styled.header`
-  background-image: url(${Background});
+  background-image: ${props => props.theme.images.imageUrl};
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
@@ -15,7 +13,7 @@ export const HeaderContainer = styled.header`
   flex-direction: column;
 
   @media (max-width: 475px) {
-    background-image: url(${BackgroundMobile});
+    background-image: ${props => props.theme.images.imageUrlMobile};
   }
 `;
 
@@ -32,10 +30,11 @@ export const HeaderContent = styled.div`
 
 export const Title = styled.h1`
   font-size: 42px;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
   color: hsl(0, 0%, 98%);
 `;
 
-export const ButtonTheme = styled.img`
+export const ButtonTheme = styled.span`
   cursor: pointer;
 `;
-

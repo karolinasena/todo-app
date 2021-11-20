@@ -7,7 +7,7 @@ export const ItemContainer = styled.li`
   align-items: center;
   width: 100%;
   padding: 1.5rem;
-  border-bottom: 1px solid hsl(235, 19%, 35%);
+  border-bottom: 1px solid ${props => props.theme.colors.border};
 `;
 
 export const Label = styled.label`
@@ -16,7 +16,7 @@ export const Label = styled.label`
   cursor: pointer;
   padding-left: 45px;
   font-size: 18px;
-  color: hsl(0,0%,98%);
+  color: ${props => props.theme.colors.text};
   line-height: 2.5rem;
 
   .check {
@@ -26,7 +26,7 @@ export const Label = styled.label`
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    border: 1px solid hsl(235, 19%, 35%);
+    border: 1px solid ${props => props.theme.colors.border};
 
     &:after {
       content: "";
@@ -60,4 +60,5 @@ export const ButtonRemove = styled.img`
   position: absolute;
   right: 2rem;
   cursor: pointer;
+  filter: ${props => props.theme.colors.filter};
 `;
