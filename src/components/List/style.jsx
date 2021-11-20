@@ -6,6 +6,8 @@ export const Container = styled.section`
   width: 100vw;
   height: 68vh;
   background: ${props => props.theme.colors.background};
+
+  transition: all .3s;
 `;
 
 export const ListContainer = styled.ul`
@@ -34,4 +36,10 @@ export const ListContainer = styled.ul`
   @media (max-width: 800px) {
     width: 80%;
   }
+`;
+
+export const Empty = styled.h1`
+  margin-top: 2rem;
+  color: ${props => props.theme.colors.text};
+  font-size: 1.5rem;
 `;

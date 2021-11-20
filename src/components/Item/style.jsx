@@ -54,6 +54,11 @@ export const InputCheckbox = styled.input`
       display: block;
     }
   }
+
+  &:checked ~ p {
+    text-decoration: line-through;
+    color: ${props => props.theme.colors.grayLight};
+  }
 `;
 
 export const ButtonRemove = styled.img`

@@ -7,10 +7,15 @@ import light from "./styles/themes/light";
 import dark from "./styles/themes/dark";
 
 function App() {
+  const [todos, setTodos] = useState([]);
   const [themeMode, setThemeMode] = useState(dark);
 
   const toggleTheme = () => {
     setThemeMode(themeMode.title === "light" ? dark : light);                 
+  }
+
+  const createTodo = (newTodo) => {
+    setTodos([...todos, newTodo]);
   }
 
   return (
@@ -18,8 +23,10 @@ function App() {
       <GlobalStyle />
       <Header 
         themeMode={themeMode}
-        toggleTheme={toggleTheme}/>
-      <List />
+        toggleTheme={toggleTheme}
+        createTodo={createTodo}
+      />
+      <List todos={todos}/>
     </ThemeProvider>
   );
 }

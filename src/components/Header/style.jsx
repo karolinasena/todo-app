@@ -12,6 +12,8 @@ export const HeaderContainer = styled.header`
   align-items: center;
   flex-direction: column;
 
+  transition: all .3s;
+
   @media (max-width: 475px) {
     background-image: ${props => props.theme.images.imageUrlMobile};
   }

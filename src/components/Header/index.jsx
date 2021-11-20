@@ -5,22 +5,20 @@ import Input from "../Input";
 import IconSun from "../../assets/icon-sun.svg";
 import IconMoon from "../../assets/icon-moon.svg";
 
-const Header = ({ themeMode, toggleTheme }) => {
-  const { title } = useContext(ThemeContext);
-
+const Header = (props) => {
   return (
     <HeaderContainer>
       <HeaderContent>
         <Title>Todo</Title>
-        <ButtonTheme onClick={toggleTheme}>
-          {themeMode.title === "light" ? (
+        <ButtonTheme onClick={props.toggleTheme}>
+          {props.themeMode.title === "light" ? (
             <img src={IconMoon} alt="Light Mode" cursor="pointer"/>
         ) : (
           <img src={IconSun} alt="Dark Mode"/>
         )}
         </ButtonTheme>
       </HeaderContent>
-      <Input />
+      <Input createTodo={props.createTodo}/>
     </HeaderContainer>
   );
 }

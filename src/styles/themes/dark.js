@@ -11,7 +11,7 @@ export default {
     background: "hsl(237,14%,26%)",
     backgroundContainer: "hsl(235,19%,35%)",
     text: "hsl(236, 33%, 92%)",
-    smallText: "hsl(234, 39%, 85%)",
+    grayLight: "hsl(234, 39%, 85%)",
     border: "hsl(234, 11%, 52%)",
     filter: "invert(100)"
   }
