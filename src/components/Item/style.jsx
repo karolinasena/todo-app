@@ -17,7 +17,7 @@ export const Label = styled.label`
   padding-left: 45px;
   font-size: 18px;
   color: ${props => props.theme.colors.text};
-  line-height: 2.5rem;
+  line-height: 2rem;
 
   .check {
     position: absolute;

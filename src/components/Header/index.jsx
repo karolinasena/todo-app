@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "styled-components";
+import React from "react";
 import { HeaderContainer, HeaderContent, Title, ButtonTheme } from "./style";
 import Input from "../Input";
 import IconSun from "../../assets/icon-sun.svg";
@@ -18,7 +17,7 @@ const Header = (props) => {
         )}
         </ButtonTheme>
       </HeaderContent>
-      <Input createTodo={props.createTodo}/>
+      <Input/>
     </HeaderContainer>
   );
 }

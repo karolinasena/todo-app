@@ -16,7 +16,7 @@ export const ListContainer = styled.ul`
   max-height: 27.5rem;
   overflow-y: auto;
   border-radius: .5rem;
-  margin-top: -4.5rem;
+  margin-top: -3.5rem;
   margin-bottom: 1.5rem;
 
   ::-webkit-scrollbar {

@@ -1,19 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, ListContainer, Empty } from "./style";
 import Item from "../Item";
+import AppContext from "../../AppContext/Context";
 
-const List = ( props ) => {
+const List = () => {
+  const { item } = useContext(AppContext);
+
   return (
     <Container>
-      {props.todos.length > 0 ? (
+      {item.length > 0 ? (
         <ListContainer>
-          {props.todos.map((todo, index) => {
+          {item.map((todo, index) => {
             return (
             <Item
               key={index}
               text={todo} 
               index={index} 
-              todos={props.todos}
              /> 
             )
           })}
@@ -22,7 +24,7 @@ const List = ( props ) => {
         <Empty>
           You don't have a todo list yet.
         </Empty>
-      )}
+      )}    
     </Container>
   );
 }

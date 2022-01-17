@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { ButtonRemove, InputCheckbox, ItemContainer, Label } from "./style";
-import IconRemove from "../../assets/icon-cross.svg"; 
+import IconRemove from "../../assets/icon-cross.svg";
+import AppContext from "../../AppContext/Context";
 
-const Item = (props) => {
-  const [item, setItem] = useState(props.todos);
-  
+const Item = ({ index }) => {
+  const { item, removeTodoContext, taskCompleted } = useContext(AppContext);
+
   return (
     <ItemContainer>
       <Label>
-        <InputCheckbox type="checkbox" id="input-checkbox"/>
-        <p>{ item[props.index] }</p>
+        <InputCheckbox type="checkbox" id="input-checkbox" onClick={() => { taskCompleted(index) }} />
+        <p>{item[index].name}</p>
         <span className="check"></span>
       </Label>
-      
-      <ButtonRemove src={IconRemove} alt="Remover TODO"/>
+
+      <ButtonRemove src={IconRemove} alt="Remover TODO" onClick={() => { removeTodoContext(index) }} />
     </ItemContainer>
   );
 }

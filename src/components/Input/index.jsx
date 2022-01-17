@@ -1,31 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { InputContainer } from "./style";
+import AppContext from "../../AppContext/Context";
 
-const Input = (props) => {
-  const [newTodo, setNewTodo] = useState("");
+const Input = () => {
+  const { createTodoContext } = useContext(AppContext);
+
+  const [newItem, setNewItem] = useState({});
 
   const handleChangeText = (e) => {
     e.stopPropagation();
-    setNewTodo(e.target.value);
+    setNewItem({ name: e.target.value, completed: false });
   }
 
-  const handleCreateNewTodo = (e) => {
+  const handleCreateNewItem = (e) => {
     e.preventDefault();
-    props.createTodo(newTodo);
-    setNewTodo("");
+    createTodoContext(newItem);
+    setNewItem({ name: "", completed: false });
   }
- 
+
   return (
-    <>
-      <InputContainer onSubmit={handleCreateNewTodo}>
-        <input
-          type="text" 
-          placeholder="Create a new todo..." 
-          value={newTodo}
-          onChange={handleChangeText}
-        />
-      </InputContainer>
-    </>
+    <InputContainer onSubmit={handleCreateNewItem}>
+      <input
+        type="text"
+        placeholder="Create a new todo..."
+        value={newItem.name}
+        onChange={handleChangeText}
+      />
+    </InputContainer>
   );
 }
 
