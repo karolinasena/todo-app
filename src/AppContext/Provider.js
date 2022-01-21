@@ -19,11 +19,18 @@ const AppProvider = ({ children }) => {
 
   const taskCompleted = (index) => {
     const tasks = JSON.parse(localStorage.getItem('tasks'));
-    
-    tasks[index].completed = !tasks[index].completed;  
+    const input = document.querySelectorAll("input[type=checkbox]");
+
+    if (tasks[index].completed) {
+      input[index].setAttribute("checked", "checked");
+    } else {
+      input[index].removeAttribute("checked", "checked");
+    }
+
+    tasks[index].completed = !tasks[index].completed;
 
     localStorage.setItem('tasks', JSON.stringify(tasks));
-   
+
     setItems([...tasks]);
   }
 
